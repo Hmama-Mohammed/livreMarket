@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "livreMarket",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

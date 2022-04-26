@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="this.crudService.gettingUser()">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      Account
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <body>
+  <section class="py-5 my-5 mt-0 pt-0">
+    <div class="container mt-0">
+      <div class="bg-white shadow rounded-lg d-block d-sm-flex">
+        <div class="profile-tab-nav border-right justify-content-center">
+          <div class="p-4">
+            <div class="img-circle text-center mb-3">
+              <img src="assets/icon.png" alt="Image" class="shadow">
+            </div>
+            <h4 class="text-center">{{this.crudService.user.payload.exportVal().name}}</h4>
+            <h5 class="text-center">{{this.crudService.user.payload.exportVal().email}}</h5>
+          </div>
+        </div>
+        <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+          <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
+            <h3 class="mb-4">Generale Settings :</h3>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Full Name</label>
+                    <ion-input type="text" [(ngModel)]="fullName" class="form-control" ></ion-input>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Email</label>
+                    <ion-input type="text"  [(ngModel)]="email" class="form-control"  disabled=""></ion-input>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Phone number</label>
+                    <ion-input type="text" [(ngModel)]="phone" class="form-control" ></ion-input>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Bio</label>
+                    <ion-textarea [(ngModel)]="bio" class="form-control" rows="3"></ion-textarea>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <button class="btn btn-primary" (click)="updateInfo()" >Update</button>
+              </div>
+          </div>
+          <div class="tab-pane show active fade mt-5" id="password" role="tabpanel" aria-labelledby="password-tab">
+            <h3 class="mb-4">Password Settings :</h3>
+            <h6>If You want to reset your password please enter your email :</h6>
+            <div class="row mt-3">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Recuperation Email</label>
+                  <input type="text" class="form-control" value="{{this.crudService.user.payload.exportVal().email}}">
+                </div>
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-primary" (click)="resetPassword()">Reset</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </body>
+
+</ion-content>

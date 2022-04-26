@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start" (click)="this.crudService.gettingUser()">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      Favoris
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <body>
+  <div class="container">
+    <figure class="image-block" *ngFor="let image of this.crudService.userFavoris">
+      <img [src]="image.payload.exportVal().url" alt="" />
+      <figcaption>
+        <ion-icon name="chevron-down-outline"></ion-icon>
+        <p>{{image.payload.exportVal().name}}</p>
+        <button (click)="showingDetails(image.payload.exportVal())" [routerLink]="['/livre', image.payload.exportVal().name]" >
+          More Info
+        </button>
+      </figcaption>
+    </figure>
+  </div>
+  </body>
+
+</ion-content>

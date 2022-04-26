@@ -1,0 +1,53 @@
+<!--<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ folder }}</ion-title>
+  </ion-toolbar>
+</ion-header>-->
+
+<ion-content [fullscreen]="true" >
+  <div class="container">
+    <div class="sub-container">
+
+      <form class="login-form" [formGroup]="validations_form" (ngSubmit)="registerUser(validations_form.value) "novalidate>
+        <ion-grid class="ion-padding">
+          <ion-col  size-md="6" size-lg="5" size-xs="12">
+            <div class="Register ion-text-center">
+              <h3>Register</h3>
+            </div>
+            <div >
+              <ion-item>
+                <ion-label position="floating">Full name</ion-label>
+                <ion-input formControlName="nomComplet" type="text"  [(ngModel)]="nomUser" ngModel required></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Email</ion-label>
+                <ion-input formControlName="email" type="email"  [(ngModel)]="emailUser" ngModel required></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input formControlName="password" type="password"  ngModel required></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Password Confirmation</ion-label>
+                <ion-input formControlName="passwordConf" type="password"  ngModel required></ion-input>
+              </ion-item>
+            </div>
+            <div padding>
+              <ion-button  size="large" type="submit" class="ion-color-primary" [disabled]="validations_form.invalid" expand="block">Register</ion-button>
+            </div>
+          </ion-col>
+          <div class=" loginTxt ion-text-center">
+            If you don't have an account <br/> please <a routerLink='/login'>
+            Login</a> first!
+          </div>
+        </ion-grid>
+      </form>
+      <div class="banner-img">
+        <img src="./assets/backdesk.png">
+      </div>
+    </div>
+  </div>
+</ion-content>

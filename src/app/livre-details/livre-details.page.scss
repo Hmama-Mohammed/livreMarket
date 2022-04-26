@@ -1,0 +1,117 @@
+.rating span {
+
+  float: right;
+  color: black;
+  text-decoration: none;
+  font-size: 2.5em;
+  transition: color .4s;
+}
+
+
+.wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.rating span:hover,
+.rating span:focus,
+.rating span:hover ~ span,
+.rating span:focus ~ span {
+  color: orange;
+  cursor: pointer;
+}
+hr {
+  border: 1px solid black;
+}
+
+.back{
+  font-size: 40px;
+  cursor: pointer;
+}
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: #f5f5f5
+}
+
+.container{
+  padding: 0;
+  border: none;
+}
+.main-section {
+  //position: absolute;
+  alignment: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  //transform: translate(-50%, 5%);
+}
+
+.left-side-product-box img{
+  width: 70%;
+  max-height: 350px;
+}
+.left-side-product-box ion-icon{
+  width: 20px;
+  float: left;
+  font-size: 20px;
+}
+.heart:hover ion-icon{
+  color: #e04055;
+}
+.heartFilled ion-icon{
+  color: #e04055;
+}
+.right-side-pro-detail div {
+  font-size: 15px;
+}
+
+.right-side-pro-detail p {
+  font-size: 25px;
+  color: black;
+}
+
+.right-side-pro-detail .price-pro {
+  color: #E45641;
+}
+
+.right-side-pro-detail .tag-section {
+  font-size: 18px;
+  color: #5D4C46;
+}
+
+.pro-box-section .pro-box img {
+  width: 100%;
+  height: 200px;
+}
+
+@media (min-width:360px) and (max-width:640px) {
+  .pro-box-section .pro-box img {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .back{
+    font-size: 30px;
+  }
+
+  .container{
+    width: 80%;
+    align-items: center;
+    justify-items: center;
+  }
+  .right-side-pro-detail div {
+    font-size: 12px;
+  }
+  .right-side-pro-detail p {
+    font-size: 14px;
+    color: black;
+  }
+  .wrapper{
+    flex-direction: column;
+    align-items: start;
+  }
+
+
+}

@@ -1,21 +1,59 @@
-<ion-header [translucent]="true">
+<!--<ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>{{ folder }}</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header>-->
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">{{ folder }}</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content >
+  <div class="container">
+    <div class="sub-container">
+      <div class="banner-img">
+        <img src="./assets/backdesk-02.png">
+      </div>
+      <form class="login-form" [formGroup]="validations_form" (ngSubmit)="LoginUser(validations_form.value)" novalidate >
+        <ion-grid class="ion-padding">
+          <ion-col  size-md="6" size-lg="5" size-xs="12">
+            <div class="Register ion-text-center">
+              <h3>Login</h3>
+            </div>
+            <div >
+              <ion-item>
+                <ion-label position="floating">Email</ion-label>
+                <ion-input formControlName="email" type="email"   ngModel required></ion-input>
+              </ion-item>
+              <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.email">
+                  <div class="error-message"
+                       *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
+                  </div>
+                </ng-container>
+              </div>
+              <ion-item>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input formControlName="password" type="password"  ngModel required></ion-input>
+              </ion-item>
+              <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.password">
+                  <div class="error-message"
+                       *ngIf="validations_form.get('password').hasError(validation.type) && (validations_form.get('password').dirty || validations_form.get('password').touched)">
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+            <div >
+              <ion-button   size="large" type="submit" class="ion-color-primary" [disabled]="validations_form.invalid" expand="block">Login</ion-button>
+              <label class="error-message ">{{errorMessage}}</label>
+            </div>
+          </ion-col>
+          <div class="ion-text-center">
+            If you don't have an account<br/> please <a routerLink='/register'>
+            register</a> first!
+          </div>
+        </ion-grid>
+      </form>
+    </div>
   </div>
 </ion-content>

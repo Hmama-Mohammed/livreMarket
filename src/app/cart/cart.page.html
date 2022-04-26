@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start" (click)="this.crudService.gettingUser()" >
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      cart
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <body>
+  <div class="wrapper">
+    <div class="project">
+      <div class="shop" >
+        <div class="box" *ngFor="let image of this.crudService.userShoppingCart">
+          <img [src]="image.payload.exportVal().url">
+          <div class="content">
+            <h3>{{image.payload.exportVal().name}}</h3>
+            <h4>Price: {{image.payload.exportVal().Price}}DH</h4>
+            <p class="btn-area" (click)="this.crudService.removeFromCart(image)"><ion-icon  name="trash" class="justify-content-sm-center icon"></ion-icon><span class="btn2 justify-content-sm-center">  Remove</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="right-bar">
+        <p><span>Subtotal</span> <span>{{this.crudService.subTotal}} DH</span></p>
+        <hr>
+        <p><span>Tax (5%)</span> <span>{{(this.crudService.subTotal * 5)/100}} DH</span></p>
+        <hr>
+        <p><span>Shipping</span> <span>15 DH</span></p>
+        <hr>
+        <p><span>Total</span> <span>{{this.crudService.subTotal + ((this.crudService.subTotal * 5)/100) + 15}} DH</span></p>
+        <a href="#">Checkout</a>
+      </div>
+    </div>
+  </div>
+  </body>
+</ion-content>

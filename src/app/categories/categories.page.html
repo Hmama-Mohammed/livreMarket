@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="medium">
+    <ion-buttons slot="start" (click)="this.crudService.gettingUser()">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      Categories
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <body>
+  <div class="container">
+    <div class="card" *ngFor="let cat of crudService.categories" style="--cards:5" (click)="getCategorie(cat.Nom)" [routerLink]="['/categorie', cat.Nom]">
+      <div class="child">
+        <h3>{{cat.Nom}}</h3>
+        <p>{{cat.NombreLivres}} Livres</p>
+      </div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+    </div>
+  </div>
+
+  </body>
+
+</ion-content>

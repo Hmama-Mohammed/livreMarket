@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
+/*
+.news .article figcaption {
+  position: absolute;
+}
+.rel,
+h2,
+h2 strong,
+.cards .card,
+.news .card,
+.news .article {
+  position: relative;
+}
+
+.df,
+.cards,
+.news {
+  display: flex;
+}
+.wrapper {
+  padding: 15px;
+}
+.news {
+  flex-flow: row wrap;
+}
+
+.news .article {
+  overflow: hidden;
+  margin: 2px;
+}
+.news .article img {
+  width: 200px;
+  height: 200px;
+  transition: 0.2s;
+}
+.news .article figcaption {
+  font-size: 14px;
+  text-shadow: 0 1px 0 rgba(51,51,51,0.3);
+  color: #fff;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 40px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+  background: rgba(6,18,53,0.6);
+  opacity: 0;
+  transform: scale(1.15);
+  transition: 0.2s;
+}
+.news .article figcaption h3 {
+  color: #3792e3;
+  font-size: 16px;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+.news .article:hover img,
+.news .article:focus img,
+.news .article:active img {
+  filter: blur(3px);
+  transform: scale(0.97);
+}
+.news .article:hover figcaption,
+.news .article:focus figcaption,
+.news .article:active figcaption {
+  opacity: 1;
+  transform: none;
+}*/
+
+.card{
+  flex: 1;
+  flex-basis: 200px;
+  flex-grow: 0;
+  height: 250px;
+  background: #fff;
+  border: 2px solid #555;
+  border-radius: 5px;
+  //border: 2px solid #fff;
+  box-shadow: 0px 2px 7px rgba(0,0,0,.5);
+  cursor: pointer;
+  transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+  overflow: hidden;
+  margin-left: 5px;
+ // height: 150px;
+  min-width: 200px;
+}
+body {
+  background: linear-gradient(to bottom right, #E3F0FF, #FAFCFF);
+  font-family: montserrat, serif;
+  overflow: scroll;
+}
+.card img{
+  height: 250px;
+  width: 100%;
+  min-width: 200px;
+  max-width: none;
+  transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+}
+.descriptions{
+  position: absolute;
+  top:0px;
+  left:0px;
+  background-color: rgba(255,255,255,.7);
+  width:100%;
+  height:100%;
+  transition: all .7s ease-in-out;
+  padding: 20px;
+  box-sizing: border-box;
+  clip-path: circle(0% at 100% 100%);
+}
+.card:hover .descriptions{
+  left:0px;
+  transition: all .7s ease-in-out;
+  clip-path: circle(75%);
+}
+.card:hover{
+  transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+  box-shadow: 0px 2px 3px rgba(0,0,0,.3);
+  transform: scale(.97);
+}
+.card:hover img{
+  transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+  transform: scale(1.6) rotate(20deg);
+  filter: blur(3px);
+}
+.card h6{
+  color: #ff3838;
+  letter-spacing: 1px;
+  margin: 0px;
+}
+.card p{
+  font-size: 12px;
+  line-height: 24px;
+  height: 68%;
+}
+.card ion-button{
+  width: fit-content;
+  height: 40px;
+  cursor: pointer;
+  border-style: none;
+  --background: #ff3838;
+  color:#fff;
+  font-size: 12px;
+  outline: none;
+  border-radius: 5px;
+  box-shadow: 0px 2px 3px rgba(0,0,0,.4);
+  transition: all .5s ease-in-out;
+  float: right;
+}
+.card ion-button:hover{
+  transform: scale(.95) translateX(-5px);
+  transition: all .5s ease-in-out;
+}
+
+.box-title {
+  margin: 10px 0px 5px 5px;
+  font-weight: bolder;
+  font-family: "Knewave", serif;
+  font-size: x-large;
+  color: #6e3bbd;
+}
+
+.scroll-box {
+  display: flex;
+  overflow-y: hidden;
+  margin-left: 20px;
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+  margin: 10px;
+  width: 2px!important;
+  border-radius: 10px;
+
+}
+::-webkit-scrollbar{
+  margin: 10px;
+  background-color: transparent;
+  width: 2px!important;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  margin: 10px;
+  width: 2px!important;
+  background-color: #6e3bbd;
+  -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,.3);
+}
+.movie {
+  margin-left: 5px;
+}
+.movie img {
+  border: 2px solid #555;
+  border-radius: 5px;
+  height: 200px;
+  min-width: 200px;
+  margin: 2px;
+  //max-width: none;
+}
+ion-content::-webkit-scrollbar{
+    width: 0px;
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  .card p{
+    font-size: 8px;
+    line-height: 19px;
+    height: 60%;
+  }
+  .card h6{
+    color: #ff3838;
+    letter-spacing: 1px;
+    margin: 0px;
+    font-size: 14px;
+  }
+  .card{
+    height: 200px;
+    min-width: 150px;
+    max-width: none;
+  }
+  .card ion-button{
+    width: fit-content;
+    //height: 30px;
+    cursor: pointer;
+    border-style: none;
+    --background: #ff3838;
+    color:#fff;
+    font-size: 10px;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0px 2px 3px rgba(0,0,0,.4);
+    transition: all .5s ease-in-out;
+    float: right;
+    height: 15%;
+  }
+.card img{
+  height: 200px;
+  min-width: 150px;
+  max-width: none;
+}
+  .box-title{
+    font-size: medium;
+  }
+  ::-webkit-scrollbar{
+    display: none;
+  }
+}
+/*
+<div class="news scroll-box">
+      <figure class="article movie">
+        <img src="/assets/backdesk-02.png" />
+        <figcaption>
+          <h3>New Item</h3>
+          <p>
+            kheart’s Gamble Arcana item for Ogre Magi makes its grand debut.
+          </p>
+        </figcaption>
+      </figure>
+    </div>
+ */

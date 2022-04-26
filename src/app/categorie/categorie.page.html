@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"  (click)="backButton()" class="back ms-3">
+      <ion-icon name="return-down-back-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      {{this.categoriesService.currentCat}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="scroll-box">
+    <div class="card" *ngFor="let image of this.categoriesService.imagesOfCategorie">
+      <img [src]="image.url">
+      <div class="descriptions">
+        <h6>{{image.name}}</h6>
+        <p>{{image.description}} </p>
+        <ion-button (click)="showingDetails(image)" [routerLink]="['/livre', image.name]">
+          <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+          Details
+        </ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>
